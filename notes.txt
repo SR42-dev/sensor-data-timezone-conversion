@@ -1,0 +1,14 @@
+ssh login (for push) : ssh -i 4px@build.pem 4px@build.4pointx.com
+
+sftp login (for sending data from local to vm) : sftp  -i 4px@build.pem 4px@build.4pointx.com
+
+to transfer data from local to vm on sftp : put <relative file path on local>
+
+push : sudo /usr/share/logstash/bin/logstash -f <corresponding config file name>.conf 
+
+in case of errored push due to already running logstash instance : sudo /usr/share/logstash/bin/logstash -f <corresponding config file name>.conf --path.data <new path e.g.; data/process12>
+
+to check logstash services : systemctl status logstash
+to kill logstash : systemctl stop logstash
+
+bootstrap server IP : 34.67.252.170:9092 (given), 34.135.68.182:9092 (from 4px documentation)
